@@ -47,10 +47,6 @@ public class RampMotionSimulation {
         double alphaRot = -a / radius;
 
         for (double t = 0.0; t <= totalTime; t += dt) {
-            time.add(t);
-            sList.add(s);
-            thetaList.add(theta);
-
             //map 1D distance s to 2D ramp coords
             double cx = (s / L) * 20.0;         // from 0 to 20
             double cy = 20.0 - (s / L) * 20.0;  // from 20 down to 0
@@ -68,10 +64,16 @@ public class RampMotionSimulation {
             double vMid = v + 0.5 * dt * a;
             double omegaMid = omega + 0.5 * dt * alphaRot;
 
+            // 2) Update to next time
             v += dt * a;
             omega += dt * alphaRot;
             s += dt * vMid;
             theta += dt * omegaMid;
+
+            // 3) THEN store the new state
+            time.add(t);
+            sList.add(s);
+            thetaList.add(theta);
         }
 
 

@@ -74,8 +74,8 @@ public class Gui {
         simPlot.setDataset(2, markerDataset);
         XYLineAndShapeRenderer markerRenderer = new XYLineAndShapeRenderer();
         //show line, hide shapes
-        markerRenderer.setSeriesLinesVisible(0, true);
-        markerRenderer.setSeriesShapesVisible(0, false);
+        markerRenderer.setSeriesLinesVisible(0, false);
+        markerRenderer.setSeriesShapesVisible(0, true);
         markerRenderer.setSeriesPaint(0, Color.BLUE);
         markerRenderer.setSeriesStroke(0, new BasicStroke(2.0f));
         simPlot.setRenderer(2, markerRenderer);
