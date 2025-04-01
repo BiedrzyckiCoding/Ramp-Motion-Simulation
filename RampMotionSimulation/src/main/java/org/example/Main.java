@@ -7,6 +7,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 import javax.swing.*;
 
+//TEST FOR THE JFREECHART, GOOD SIMULATION IN RampMotionSimulation
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
